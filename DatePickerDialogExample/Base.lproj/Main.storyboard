@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DatePickerDialogExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,81 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wb0-mf-Hmj">
+                                <rect key="frame" x="40" y="40" width="520" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dNp-pD-DWb"/>
+                                </constraints>
+                                <state key="normal" title="Date &amp; Time"/>
+                                <connections>
+                                    <action selector="datePickerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZYx-NT-ONt"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B8z-9w-JaE">
+                                <rect key="frame" x="40" y="190" width="520" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ED6-HF-4FU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qly-sg-EfV">
+                                <rect key="frame" x="40" y="239" width="520" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="t0q-yc-FX5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rk2-eP-nAM">
+                                <rect key="frame" x="40" y="85" width="520" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ogk-em-DTZ"/>
+                                </constraints>
+                                <state key="normal" title="Date Only"/>
+                                <connections>
+                                    <action selector="dateOnlyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ccg-Li-q3f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6U4-Ei-h9P">
+                                <rect key="frame" x="40" y="130" width="520" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="I9i-MJ-yO0"/>
+                                </constraints>
+                                <state key="normal" title="Time Only"/>
+                                <connections>
+                                    <action selector="timeOnlyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ge-Er-XMy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="6U4-Ei-h9P" secondAttribute="trailing" constant="20" id="1IY-Ng-ewb"/>
+                            <constraint firstItem="rk2-eP-nAM" firstAttribute="top" secondItem="Wb0-mf-Hmj" secondAttribute="bottom" constant="15" id="3rQ-lO-9vz"/>
+                            <constraint firstItem="B8z-9w-JaE" firstAttribute="top" secondItem="6U4-Ei-h9P" secondAttribute="bottom" constant="30" id="EiZ-Fg-O9I"/>
+                            <constraint firstItem="Wb0-mf-Hmj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="F6D-JI-ECz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rk2-eP-nAM" secondAttribute="trailing" constant="20" id="FeJ-pg-MHf"/>
+                            <constraint firstItem="qly-sg-EfV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="XIR-CO-amg"/>
+                            <constraint firstItem="6U4-Ei-h9P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="aUb-zJ-8uF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qly-sg-EfV" secondAttribute="trailing" constant="20" id="dsg-ne-3TG"/>
+                            <constraint firstItem="6U4-Ei-h9P" firstAttribute="top" secondItem="rk2-eP-nAM" secondAttribute="bottom" constant="15" id="dzT-mI-mTc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wb0-mf-Hmj" secondAttribute="trailing" constant="20" id="f4E-dm-CKM"/>
+                            <constraint firstItem="rk2-eP-nAM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="ftE-m2-qho"/>
+                            <constraint firstItem="Wb0-mf-Hmj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="kF1-aG-wSh"/>
+                            <constraint firstItem="qly-sg-EfV" firstAttribute="top" secondItem="B8z-9w-JaE" secondAttribute="bottom" constant="19" id="qzf-vo-ivA"/>
+                            <constraint firstItem="B8z-9w-JaE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="yDr-E3-m84"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B8z-9w-JaE" secondAttribute="trailing" constant="20" id="yGt-yN-U8H"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateTextField" destination="B8z-9w-JaE" id="Ecf-Ri-zIt"/>
+                        <outlet property="timeTextField" destination="qly-sg-EfV" id="GRq-a0-HPb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="301" y="389"/>
         </scene>
     </scenes>
 </document>
